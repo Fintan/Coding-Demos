@@ -1,0 +1,15 @@
+-swf9 bin/wordsearch.swf
+-main wordsearch.WordsearchMain
+#-lib robothaxe:1.0.1
+#-main Main
+-debug
+-swf-version 11
+-swf-header 750:700:30:ffffff
+-cp src
+-resource bin/words.xml@words
+-D network-sandbox
+--macro RTTI.generate()
+-debug
+#-cmd open -a /Applications/Flash\ Player\ Debugger.app bin/wordsearch.swf
+#-cmd open -a /Applications/GoogleChrome.app http://localhost/~fintan/fiontar/wordsearch/wordsearch/bin/flindex.html?puzzleid=wordsearch
+
