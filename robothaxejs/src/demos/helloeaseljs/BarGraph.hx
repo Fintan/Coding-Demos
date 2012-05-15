@@ -1,4 +1,10 @@
 package demos.helloeaseljs;
+import createjs.easel.Ticker;
+import createjs.easel.Graphics;
+import createjs.easel.Text;
+import createjs.easel.Shape;
+import createjs.easel.Container;
+import createjs.easel.Stage;
 
 import js.w3c.html5.Canvas2DContext;
 import js.w3c.html5.Core;

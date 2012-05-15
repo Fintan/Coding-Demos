@@ -273,7 +273,7 @@ demos.helloeaseljs.BarGraph.prototype.init = function() {
 	this.barValues = [];
 	this.bars = [];
 	this.canvas = js.Lib.document.getElementById("testCanvas");
-	haxe.Log.trace("canvas " + this.canvas,{ fileName : "BarGraph.hx", lineNumber : 33, className : "demos.helloeaseljs.BarGraph", methodName : "init"});
+	haxe.Log.trace("canvas " + this.canvas,{ fileName : "BarGraph.hx", lineNumber : 39, className : "demos.helloeaseljs.BarGraph", methodName : "init"});
 	this.stage = new Stage(this.canvas);
 	this.stage.enableMouseOver(10);
 	var numBars = 4 + Math.ceil(Math.random() * 6);
@@ -337,7 +337,7 @@ demos.helloeaseljs.BarGraph.prototype.init = function() {
 		var barDom = bar;
 		barDom.onPress = (function(i) {
 			return function(e) {
-				haxe.Log.trace("onPress: " + i[0],{ fileName : "BarGraph.hx", lineNumber : 155, className : "demos.helloeaseljs.BarGraph", methodName : "init"});
+				haxe.Log.trace("onPress: " + i[0],{ fileName : "BarGraph.hx", lineNumber : 161, className : "demos.helloeaseljs.BarGraph", methodName : "init"});
 			};
 		})(i);
 		this.stage.addChild(bar);
