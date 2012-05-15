@@ -1,0 +1,9 @@
+#--js-modern
+#-debug
+#--dead-code-elimination
+-cp src
+-cp thirdparty
+-lib xirsys_stdjs
+-js bin/helloeaseljs/main.js
+-main demos.helloeaseljs.BarGraph
+#-cmd open -a /Applications/GoogleChrome.app http://localhost/~fintan/modello/dev/myhaxedemos/Haxe-Demos/robothaxejs/bin/helloeaseljs/index.html

@@ -1,8 +1,0 @@
-#--js-modern
-#-debug
-#--dead-code-elimination
--cp src
--js bin/main.js
--main demos.hellojs.HelloJs
---macro RTTI.generate()
-#-cmd open -a /Applications/Google\ Chrome.app http://localhost/robothaxejs/bin/index.html
