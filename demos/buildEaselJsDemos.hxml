@@ -1,0 +1,18 @@
+#--js-modern
+#-debug
+#--dead-code-elimination
+-cp src
+-cp thirdparty
+-lib xirsys_stdjs
+-js bin/easeljs_demos/bargraph.js
+-main demos.easel.BarGraphTest
+#-cmd open -a /Applications/GoogleChrome.app http://localhost/~fintan/modello/dev/myhaxedemos/Haxe-Demos/demos/bin/easeljs_demos/BarGraph.html
+
+--next
+
+-cp src
+-cp thirdparty
+-lib xirsys_stdjs
+-js bin/easeljs_demos/localtoglobal.js
+-main demos.easel.LocalToGlobalTest
+#-cmd open -a /Applications/GoogleChrome.app http://localhost/~fintan/modello/dev/myhaxedemos/Haxe-Demos/demos/bin/easeljs_demos/LocalToGlobal.html

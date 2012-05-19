@@ -1,4 +1,4 @@
-package demos.helloeaseljs;
+package demos.easel;
 import createjs.easel.Ticker;
 import createjs.easel.Graphics;
 import createjs.easel.Text;
@@ -11,7 +11,7 @@ import js.w3c.html5.Core;
 import js.Lib;
 import js.Dom.HtmlDom;
 
-class BarGraph
+class BarGraphTest
 {
 	var canvas:HTMLCanvasElement;
 	var stage : Stage;
@@ -224,6 +224,6 @@ class BarGraph
 	
 	static function main()
 	{
-		new BarGraph();
+		new BarGraphTest();
 	}
 }
