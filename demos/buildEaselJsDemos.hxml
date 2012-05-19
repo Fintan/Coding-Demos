@@ -24,4 +24,13 @@
 -lib xirsys_stdjs
 -js bin/easeljs_demos/matrixtest.js
 -main demos.easel.MatrixTest
--cmd open -a /Applications/GoogleChrome.app http://localhost/~fintan/modello/dev/myhaxedemos/Haxe-Demos/demos/bin/easeljs_demos/MatrixTest.html
+#-cmd open -a /Applications/GoogleChrome.app http://localhost/~fintan/modello/dev/myhaxedemos/Haxe-Demos/demos/bin/easeljs_demos/MatrixTest.html
+
+--next
+
+-cp src
+-cp thirdparty
+-lib xirsys_stdjs
+-js bin/easeljs_demos/cacheasbitmap.js
+-main demos.easel.CacheAsBitmapTest
+-cmd open -a /Applications/GoogleChrome.app http://localhost/~fintan/modello/dev/myhaxedemos/Haxe-Demos/demos/bin/easeljs_demos/CacheAsBitmap.html
