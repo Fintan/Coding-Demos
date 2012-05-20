@@ -42,4 +42,22 @@
 -lib xirsys_stdjs
 -js bin/easeljs_demos/globaltolocal3.js
 -main demos.easel.GlobalToLocal3Test
--cmd open -a /Applications/GoogleChrome.app http://localhost/~fintan/modello/dev/myhaxedemos/Haxe-Demos/demos/bin/easeljs_demos/GlobalToLocal3.html
+#-cmd open -a /Applications/GoogleChrome.app http://localhost/~fintan/modello/dev/myhaxedemos/Haxe-Demos/demos/bin/easeljs_demos/GlobalToLocal3.html
+
+--next
+
+-cp src
+-cp thirdparty
+-lib xirsys_stdjs
+-js bin/easeljs_demos/simplespritesheet.js
+-main demos.easel.SimpleSpriteSheetTest
+-cmd open -a /Applications/GoogleChrome.app http://localhost/~fintan/modello/dev/myhaxedemos/Haxe-Demos/demos/bin/easeljs_demos/SimpleSpriteSheet.html
+
+#--next
+
+#-cp src
+#-cp thirdparty
+#-lib xirsys_stdjs
+#-js bin/easeljs_demos/bitmapanimation.js
+#-main demos.easel.BitmapAnimationTest
+#-cmd open -a /Applications/GoogleChrome.app http://localhost/~fintan/modello/dev/myhaxedemos/Haxe-Demos/demos/bin/easeljs_demos/BitmapAnimation.html
