@@ -22,22 +22,7 @@ class SimpleSpriteSheetTest
 		// create a new stage and point it at our canvas:
 		var stage = new Stage(canvas);
 		
-		/*
-		var data = {
-			"frames": {
-				"width": 200,
-				"numFrames": 64,
-				"regX": 2,
-				"regY": 2,
-				"height": 361
-			},
-			"animations": {"jump": [26, 63], "run": [0, 25]},
-			"images": ["./assets/runningGrant.png"]
-		}
-		*/
 		// Define a spritesheet. Note that this data can be exported by Zoë.
-		
-		
 		var ss = new SpriteSheet({
 			images: ["./assets/runningGrant.png"],
 			frames: {
