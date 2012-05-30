@@ -51,7 +51,16 @@
 -lib xirsys_stdjs
 -js bin/easeljs_demos/simplespritesheet.js
 -main demos.easel.SimpleSpriteSheetTest
--cmd open -a /Applications/GoogleChrome.app http://localhost/~fintan/modello/dev/myhaxedemos/Haxe-Demos/demos/bin/easeljs_demos/SimpleSpriteSheet.html
+#-cmd open -a /Applications/GoogleChrome.app http://localhost/~fintan/modello/dev/myhaxedemos/Haxe-Demos/demos/bin/easeljs_demos/SimpleSpriteSheet.html
+
+--next
+
+-cp src
+-cp thirdparty
+-lib xirsys_stdjs
+-js bin/easeljs_demos/soundgrid.js
+-main demos.easel.SoundGridTest
+-cmd open -a /Applications/GoogleChrome.app http://localhost/~fintan/modello/dev/myhaxedemos/Haxe-Demos/demos/bin/easeljs_demos/SoundGrid.html
 
 #--next
 
