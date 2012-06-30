@@ -153,11 +153,8 @@ class BarGraphTest
 			// position the bar, and add it to the stage:
 			bar.x = i*(barWidth+barPadding)+60;
 			bar.y = canvas.height-70;
-		
 
-			var barDom = cast bar;
-
-			barDom.onPress = function(e){
+			bar.onPress = function(e){
 				trace("onPress: "+ i);
 			};
 			

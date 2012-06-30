@@ -75,17 +75,14 @@ class DragAndDropTest
 
 			// wrapper function to provide scope for the event handlers:
 			
-			var bitmapBut = cast bitmap;
-			bitmapBut.onPress = function(evt) {
+			bitmap.onPress = function(evt) {
 				// bump the target in front of it's siblings:
 				container.addChild(bitmap);
 				var offset = {x:bitmap.x-evt.stageX, y:bitmap.y-evt.stageY};
 
-				
-				var evtBut = evt;
 				// add a handler to the event object's onMouseMove callback
 				// this will be active until the user releases the mouse button:
-				evtBut.onMouseMove = function(ev) {
+				evt.onMouseMove = function(ev) {
 					bitmap.x = ev.stageX+offset.x;
 					bitmap.y = ev.stageY+offset.y;
 					// indicate that the stage should be updated on the next tick:
@@ -94,11 +91,11 @@ class DragAndDropTest
 				
 			}
 
-			bitmapBut.onMouseOver = function() {
+			bitmap.onMouseOver = function() {
 				bitmap.scaleX = bitmap.scaleY = 1.2;
 				update = true;
 			}
-			bitmapBut.onMouseOut = function() {
+			bitmap.onMouseOut = function() {
 				bitmap.scaleX = bitmap.scaleY = 1;
 				update = true;
 			}
