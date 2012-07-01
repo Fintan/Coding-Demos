@@ -11989,7 +11989,7 @@ define('calculator',['require','backbone','romanNumerals'],function(require) {
 			
 			if(this.isOperator(input)){
 				
-				if(this.get("valueEndAStr") == ""){
+				if(this.get("valueEndAStr") === ""){
 					
 					this.createAlertMessage("initial value required before using an operator", 1);
 					return;
