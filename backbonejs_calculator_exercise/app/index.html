@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>RequireJS - The Basics</title>
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<style>
+		@font-face {  
+		  	font-family: Trajan-Regular;  
+			/*src: url("css/Trajan-Regular.eot");*/
+		  	src: url("css/Trajan-Regular.otf");
+		  	/*http://ufonts.com/download/trajan-regular/34516.html*/
+		}  
+		
+		.romanNumeralFont { 
+			font-family: Trajan-Regular;  
+		}
+		
+		.output {
+			font-size: 1.8em;
+		}
+		
+		html * {
+			font-size: 100%;
+		}
+		
+	</style>
+</head>
+<body>
+	
+	<div id="controls" class="btn-toolbar"> 
+		<div id="numeral-buttons" class="romanNumeralFont btn-group">
+		  <button class="btn">I</button>
+		  <button class="btn">V</button>
+		  <button class="btn">X</button>
+		  <button class="btn">L</button>
+		  <button class="btn">C</button>
+		  <button class="btn">D</button>
+		  <button class="btn">M</button>
+		</div>
+		<div id="operator-buttons" class="btn-group">
+		  <button class="btn">&#43;</button>
+		  <button class="btn">&#45;</button>
+		  <button class="btn">&#42;</button>
+		  <button class="btn">&#61;</button>
+		</div>
+	</div>
+	<div id="display" class="output"></div>
+	
+	<script data-main="js/main" src="js/require.js"></script>
+</body>
+</html>
