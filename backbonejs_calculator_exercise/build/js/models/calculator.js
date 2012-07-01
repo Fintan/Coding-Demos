@@ -62,6 +62,12 @@ define(['require','backbone','romanNumerals'],function(require) {
 			
 			if(this.isOperator(input)){
 				
+				if(this.get("valueEndAStr") == ""){
+					
+					this.createAlertMessage("initial value required before using an operator", 1);
+					return;
+				}
+				
 				if(this.get("valueEndBStr") != ""){
 					
 					this.performCalculation();
