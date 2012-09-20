@@ -1,0 +1,5 @@
+package medialibrary;
+
+interface IMediaItem {
+	
+}

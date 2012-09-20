@@ -1,0 +1,15 @@
+-cp src
+-cp test
+-lib utest
+-lib casalib
+-swf output/medialibrary.swf
+-main Main
+
+--next
+
+-cp src
+-cp test
+-lib utest
+-lib casalib
+-js output/medialibrary.js
+-main Main
