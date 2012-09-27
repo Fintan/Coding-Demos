@@ -1,0 +1,9 @@
+#--js-modern
+#-debug
+#--dead-code-elimination
+-cp src
+-cp thirdparty
+-js bin/hellojs/main.js
+-main demos.hellojs.HelloJs
+--macro RTTI.generate()
+#-cmd open -a /Applications/GoogleChrome.app http://localhost/~fintan/modello/dev/dev/mydemos/Coding-Demos/robothaxe_js_example/bin/hellojs/index.html
