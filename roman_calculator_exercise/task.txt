@@ -1,6 +1,4 @@
-[update]
-I've repackaged this example using Grunt.js (see 'roman_calculator_exercise') but leaving this version here for future reference to demonstrate using require.js on its own to build the app.
-[/update]
+Using Grunt.js as a build tool in this version.  I'm also going to add proper graphics/css for the actual visual calculator.
 
 Roman Numeral Calculator
 
