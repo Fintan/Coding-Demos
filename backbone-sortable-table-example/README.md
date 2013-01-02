@@ -14,6 +14,6 @@ An implementation of a table that is populated with JSON data and is sortable an
 
 ##Instructions
 
-You will need to install [Grunt](www.gruntjs.com) first before you can create a build.  Once Grunt is installed you can simply enter the 'grunt' command in the terminal and it will run the default task. 
+You will need to install [Grunt](http://www.gruntjs.com) first before you can create a build.  Once Grunt is installed you can simply enter the 'grunt' command in the terminal and it will run the default task. 
 
 A sample build is located in 'dist/' and a live demo can be viewed [here](http://fboyle.com/dev/backbonetable/).
