@@ -1,0 +1,33 @@
+{{!debug}}
+
+
+	<table id='mediatable'>
+		<thead>
+			<th id='resource_type'>{{mediaItemsHeader.resource_type}}</th>
+			<th id='media_type_id'>{{mediaItemsHeader.media_type_id}}</th>
+			<th id='display_title'>{{mediaItemsHeader.display_title}}</th>
+			<th id='language'>{{mediaItemsHeader.language}}</th>
+		</thead>
+		
+		<tbody>
+		
+		{{#each mediaItems}}
+		<tr id='{{this.id}}' data-viewable='{{this.viewable}}'>
+			<td>{{this.resource_type}}</td>
+			<td>
+				{{!this.media_type}} 
+				{{addIcon this.media_type this.id this.viewable}}
+			</td>
+			<td>{{this.display_title}}</td>
+			<td>{{this.language}}</td>
+		</tr>
+		{{/each}}
+		
+		</tbody>
+		
+		{{! not using this presently }}
+		{{!#mediaItemsRows mediaItems}}
+			{{!resource_type}}  {{media_type}} {{display_title}} {{language}}
+		{{!/mediaItemsRows}}
+		
+	</table>
