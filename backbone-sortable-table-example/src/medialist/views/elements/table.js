@@ -25,6 +25,10 @@ define(["underscore", "jquery", "backbone", "medialist/models/labels", "jst"], f
 				this.collection.on("pageChange", _.bind(this._onNewPage, this));
 
 			}
+			
+			//needed for a backbone bug when using a data attribute as a selector?
+			this.$el.on("click", "tr[data-viewable='true']", 
+				_.bind(this._onRowClick, this));
 
 		},
 
@@ -75,11 +79,6 @@ define(["underscore", "jquery", "backbone", "medialist/models/labels", "jst"], f
 				
 				$("thead").css('cursor', 'pointer');
 				$("tr[data-viewable='true']").css('cursor', 'pointer');
-				
-				//needed for a backbone bug when using a data attribute as a selector?
-				$("table").delegate("tr[data-viewable='true']", "click", 
-					_.bind(this._onRowClick, this));
-				
 				
 			}, this));
 
