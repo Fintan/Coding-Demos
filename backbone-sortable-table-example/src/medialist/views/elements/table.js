@@ -35,16 +35,16 @@ define(["underscore", "jquery", "backbone", "medialist/models/labels", "jst"], f
 		},
 
 		_onRowClick: function(ev) {
-
+			
 			ev.stopPropagation();
 
-			var $target = $(event.target);
-
+			var $target = $(ev.target);
+			
 			var id = $target.parent().attr("id");
 
 			if ($target.is("img")) {
 
-				id = $(event.target).attr("id");
+				id = $(ev.target).attr("id");
 
 			}
 
