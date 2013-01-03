@@ -7,8 +7,8 @@ define(["underscore", "jquery", "backbone", "medialist/models/labels", "jst"], f
 		template: "src/templates/table.hbs",
 
 		events: {
-			"click thead": "_onColumnClick",
-			"click tr[data-viewable='true']": "_onRowClick"
+			"click thead": "_onColumnClick"//,
+			//"click tr[data-viewable='true']": "_onRowClick"
 		},
 
 		initialize: function(attributes, options) {
@@ -75,6 +75,11 @@ define(["underscore", "jquery", "backbone", "medialist/models/labels", "jst"], f
 				
 				$("thead").css('cursor', 'pointer');
 				$("tr[data-viewable='true']").css('cursor', 'pointer');
+				
+				//needed for a backbone bug when using a data attribute as a selector?
+				$("table").delegate("tr[data-viewable='true']", "click", 
+					_.bind(this._onRowClick, this));
+				
 				
 			}, this));
 
