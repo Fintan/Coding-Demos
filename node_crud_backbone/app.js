@@ -3,6 +3,7 @@ var express = require('express');
 	http = require('http'),
  	books = require('./routes/books');
  	resources = require('./routes/resources');
+	_ = require("underscore");
 
 var app = express();
 

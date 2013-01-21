@@ -57,9 +57,10 @@ exports.updateResource = function(req, res) {
     var id = req.params.id;
     var resource = req.body;
     console.log('Updating resource: ' + id);
-    console.log(JSON.stringify(resource)); //new mongo.ObjectID(req.params.id)
-    db.collection('resources', function(err, collection) {
-        collection.update({'_id': new mongo.ObjectID(id)}, resource, {safe:true}, function(err, result) {
+	console.log(JSON.stringify(resource)); 
+    
+	db.collection('resources', function(err, collection) {
+        collection.update({'_id': new mongo.ObjectID(id)}, _.omit(resource, '_id'), {safe:true}, function(err, result) {
             if (err) {
                 console.log('Error updating resource: ' + err);
                 res.send({'error':'An error has occurred'});
