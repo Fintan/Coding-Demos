@@ -3,8 +3,8 @@
 		
 		window.resources = new Resources();
 		resources.fetch();
-		var records = new RecordsView({collection: resources});
-		$("#container").append(records.render().el);
+		
+		new MainView({collection: resources}).render();
 		
 	});
 }());
@@ -48,6 +48,7 @@ var Resources = Backbone.Collection.extend({
 });
 
 
+
 var RecordView = Backbone.View.extend({
 
 	tagName: "li",
@@ -58,16 +59,13 @@ var RecordView = Backbone.View.extend({
 
 			this.model = options.model;
 			
-			this.model.on('change', this.render, this);
-
 		}
 
 	},
 
 	render: function() {
 
-		//this.model.toJSON();
-		this.$el.html("yo!");
+		this.$el.html("title: "+ this.model.display_title + "("+ this.model.resource_type +")");
 
 		return this;
 
@@ -85,7 +83,7 @@ var RecordsView = Backbone.View.extend({
 
 			this.collection = options.collection;
 			
-			this.collection.on('update', this.render, this);
+			this.collection.on('change', this.render, this);
 
 		}
 
@@ -93,16 +91,44 @@ var RecordsView = Backbone.View.extend({
 
 	render: function() {
 
-		console.log("Records:render");
+		this.$el.empty();
 		
 		var record = _.each(this.collection.toJSON(), function(ob) {
 			
-			console.log("yo!");
-			this.$el.innerHTML = new RecordView({model: ob}).render().el;
+			this.$el.append(new RecordView({model: ob}).render().el);
 			
 		}, this);
 		
 		return this;
 
 	}
+});
+
+var MainView = Backbone.View.extend({
+	
+	el:"#container",
+	
+	initialize: function(options) {
+
+		if (options && options.collection) {
+
+			this.collection = options.collection;
+			
+			this.records = new RecordsView({ collection: this.collection });
+
+			//this.collection.on('update', this.render, this); //triggers when anything changes in the models
+			this.collection.on('reset', this.render, this); //triggers when initially loaded and when anything changes in the models
+
+		}
+
+	},
+
+	render: function() {
+
+		this.$el.html(this.records.render().el);
+
+		return this;
+
+	}
+	
 });
