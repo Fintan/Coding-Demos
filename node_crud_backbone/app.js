@@ -1,8 +1,8 @@
-var express = require('express');
+var express = require('express'),
 	path = require('path'),
 	http = require('http'),
- 	books = require('./routes/books');
- 	resources = require('./routes/resources');
+ 	books = require('./routes/books'),
+ 	resources = require('./routes/resources'),
 	_ = require("underscore");
 
 var app = express();
