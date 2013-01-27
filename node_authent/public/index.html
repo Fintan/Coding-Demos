@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Basic Authentication Example</title>
+</head>
+<body>
+	Making AJAX call (check console)
+	
+	<!--polyfill for older browsers without btoa -->
+	<script src="libs/base64.js"></script>	
+	<script src="libs/jquery.js"></script>	
+	<script>
+	
+	$(function(){
+			var username = "joe";
+			var password = "pass";  
+
+			function make_base_auth(user, password) {
+			  var tok = user + ':' + password;
+			  var hash = btoa(tok);
+			  return "Basic " + hash;
+			}
+			
+			//apply to all ajax calls
+			$.ajaxSetup({
+				headers: {
+					'Authorization' : make_base_auth(username, password)
+				}
+			});
+			
+			$.ajax
+			  ({
+			    type: "GET",
+			    url: "/hello",
+			    data: '{}'/*,
+			    beforeSend: function (xhr){ 
+			        xhr.setRequestHeader('Authorization', make_base_auth(username, password)); 
+			    }*/
+			}).done(
+				function(data) {
+					console.log(data);
+				}
+			).fail(
+				function(jqXHR, textStatus, errorThrown) {
+					console.log("error: "+jqXHR.status);
+					if(jqXHR.status === 401) {
+						console.log("not allowed!");
+					}else if(jqXHR.status === 404) {
+						console.log("not found");
+					}
+				}
+			);
+
+			//this request doesn't require authentication but it also has the authorization header
+			$.ajax
+			  ({
+			    type: "GET",
+			    url: "/helloAgain",
+			    data: '{}'
+			}).done(
+				function(data) {
+					console.log(data);
+				});
+		
+		});
+
+	</script>	
+</body>
+</html>

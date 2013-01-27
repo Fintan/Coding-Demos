@@ -1,0 +1,1 @@
+A barebones example showing how to make an Ajax request using Http Authentication to a REST service created with Node/Express
