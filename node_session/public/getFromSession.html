@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Basic Session Example</title>
+</head>
+<body>
+	Retrieving something from session object with an AJAX call (check console)
+	
+	<script src="libs/jquery.js"></script>	
+	<script>
+	
+	$(function(){
+			
+			$.ajax({
+				
+			    type: "GET",
+			    url: "/getsessionprops"
+			    
+			}).done(
+				function(data) {
+					console.log(data);
+					$('body').append("<p>Session data:</p>");
+					$('body').append("<div>"+JSON.stringify(data)+"</div>");
+				}
+			).fail(
+				function(jqXHR, textStatus, errorThrown) {
+					console.log("error: "+jqXHR.status);
+				}
+			);
+		
+		});
+
+	</script>	
+</body>
+</html>

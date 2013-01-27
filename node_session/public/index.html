@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Basic Session Example</title>
+</head>
+<body>
+	Adding a value to a session object with a AJAX POST request (check console)
+	
+	<script src="libs/jquery.js"></script>	
+	<script>
+	
+	$(function(){
+			
+			$.ajax
+			  ({
+			    type: "POST",
+			    url: "/setsessionprops",
+			    data: {id:1234, message:'hello from index.html!'}
+			    
+			}).done(
+				function(data) {
+					console.log("data ", data.id);
+					$('body').append("<p>Added this data to a session:</p>");
+					$('body').append("<div>"+JSON.stringify(data)+"</div>");
+				}
+			).fail(
+				function(jqXHR, textStatus, errorThrown) {
+					console.log("error: "+jqXHR.status);
+				}
+			);
+		
+		});
+
+	</script>	
+</body>
+</html>
